@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Identity;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -8,10 +9,9 @@ using System.Threading.Tasks;
 
 namespace Models
 {
-    internal class Material
+    public class Material
     {
         [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public Guid Id { get; set; }
         public string Name { get; set; } 
         public string Description { get; set; }
@@ -23,8 +23,7 @@ namespace Models
         public double Height { get; set; }
         [Required]
         public double Thicknes{ get; set; }
-        [Required]
-        public User Owner { get; set; }
+        public IdentityUser Owner { get; set; }
         public Guid OwnerId { get; set; } 
     }
 }

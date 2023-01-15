@@ -6,7 +6,7 @@ namespace Materials.Data
 {
     public class ApplicationDbContext : IdentityDbContext
     {
-        DbSet<Material> Materials { get; set; }
+        public DbSet<Material> Materials { get; set; }
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
             : base(options)
         {
